@@ -6,8 +6,8 @@ namespace CS_Practise
     {
         static void Main(string[] args)
         {
-            question5 ques = new question5();
-            ques.reverse();
+            question14 ques = new question14();
+            ques.ExceptionT();
         }
     }
 }
