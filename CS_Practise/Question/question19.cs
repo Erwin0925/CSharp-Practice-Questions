@@ -29,22 +29,23 @@ namespace CS_Practise.Question
             }
         }
 
-        private IEnumerable<int> FlattenArray(object input)
+        public IEnumerable<int> FlattenArray(object array)
         {
-            if (input is IEnumerable enumerable)
+            if (array is IEnumerable enumerable)
             {
                 foreach (var item in enumerable)
                 {
-                    foreach (var subItem in FlattenArray(item))
+                    foreach(var subitem in FlattenArray(item))
                     {
-                        yield return subItem;
+                        yield return subitem;
                     }
                 }
             }
-            else if (input is int value)
+            else if (array is int num)
             {
-                yield return value;
+                yield return num;
             }
         }
+
     }
 }

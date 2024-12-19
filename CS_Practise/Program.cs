@@ -6,8 +6,8 @@ namespace CS_Practise
     {
         static void Main(string[] args)
         {
-            question14 ques = new question14();
-            ques.ExceptionT();
+            question21 ques = new question21();
+            ques.CRUDLinkedList();
         }
     }
 }
