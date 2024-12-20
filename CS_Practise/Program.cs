@@ -1,4 +1,6 @@
 ﻿using CS_Practise.Question;
+using CS_Practise.Question.LinQ;
+using CS_Practise.Question.Search_Sort;
 
 namespace CS_Practise
 {
@@ -6,8 +8,8 @@ namespace CS_Practise
     {
         static void Main(string[] args)
         {
-            question21 ques = new question21();
-            ques.CRUDLinkedList();
+            question35 ques = new question35();
+            ques.IsRemainder();
         }
     }
 }
