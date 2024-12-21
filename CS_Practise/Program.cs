@@ -1,6 +1,4 @@
-﻿using CS_Practise.Question;
-using CS_Practise.Question.LinQ;
-using CS_Practise.Question.Search_Sort;
+﻿using CS_Practise.Question.Dictionary;
 
 namespace CS_Practise
 {
@@ -8,8 +6,8 @@ namespace CS_Practise
     {
         static void Main(string[] args)
         {
-            question35 ques = new question35();
-            ques.IsRemainder();
+            question44 ques = new question44();
+            ques.DictionaryMedium();
         }
     }
 }
