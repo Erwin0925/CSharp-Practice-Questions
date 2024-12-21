@@ -4,53 +4,32 @@
 
 namespace CS_Practise.Question.Search_Sort
 {
-    public class LinklistNode
+    using CS_Practise.Question.LinkedList;
+    public class LinkedlistWithSearch : LinkedList
     {
-        public int Data { get; set; }
-        public LinklistNode? Next { get; set; } = null;
-
-        public LinklistNode(int data)
+        public int getIndex(int data)
         {
-            this.Data = data;
-            Next = null;
-        }
-    }
-
-    public class LinkedLists
-    {
-        LinklistNode? head = null;
-        public void AddToBack(int data)
-        {
-            var node = new LinklistNode(data);
             if (head == null)
             {
-                head = node;
+                Console.WriteLine("The linked list is empty");
+                return -1;
             }
-            else
-            {
-                LinklistNode? current = head;
-                while (current.Next != null)
-                {
-                    current = current.Next;
-                }
-                current.Next = node;
-            }
-        }
 
-        public int SearchPosition(int num)
-        {
-            LinklistNode? current = head;
-            int position = 0;
-            while (current != null)
+            int index = 0;
+            Node? current = head;
+            while (current != null && current.data != data)
             {
-                if (current.Data == num)
-                {
-                    return position;
-                }
-                current = current.Next;
-                position++;
+                index++;
+                current = current.next;
             }
-            return -1;
+
+            if (current == null)
+            {
+                Console.WriteLine("Not Found");
+                return -1;
+            }
+
+            return index;
         }
     }
 
@@ -58,15 +37,15 @@ namespace CS_Practise.Question.Search_Sort
     {
         public void SearchLinkedList()
         {
-            LinkedLists linkedList = new LinkedLists();
-            linkedList.AddToBack(3);
-            linkedList.AddToBack(5);
-            linkedList.AddToBack(12);
-            linkedList.AddToBack(7);
-            linkedList.AddToBack(44);
-            linkedList.AddToBack(23);
+            LinkedlistWithSearch linkedList = new LinkedlistWithSearch();
+            linkedList.InsertBack(3);
+            linkedList.InsertBack(5);
+            linkedList.InsertBack(12);
+            linkedList.InsertBack(7);
+            linkedList.InsertBack(44);
+            linkedList.InsertBack(23);
 
-            Console.WriteLine(linkedList.SearchPosition(12));
+            Console.WriteLine(linkedList.getIndex(12));
 
         }
     }

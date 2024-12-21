@@ -4,58 +4,11 @@
 
 namespace CS_Practise.Question.Search_Sort
 {
-    public class Node
+    using CS_Practise.Question.LinkedList;
+    public class LinkedlistWithSort : LinkedList
     {
-        public int data { get; set; }
-        public Node? next { get; set; }
-        public Node(int data)
-        {
-            this.data = data;
-            next = null;
-        }
-    }
-
-    public class Linkedlist
-    {
-        Node? head = null;
-
-        public void AddToBack(int data)
-        {
-            var node = new Node(data);
-            if (head == null)
-            {
-                head = node;
-            }
-            else
-            {
-                Node current = head;
-                while (current.next != null)
-                {
-                    current = current.next;
-                }
-                current.next = node;
-            }
-        }
-
-        public void Display()
-        {
-            if (head == null)
-            {
-                Console.WriteLine("No data stored in linkedlist");
-            }
-            else
-            {
-                Node? current = head;
-                while (current !=null)
-                {
-                    Console.Write(current.data + " ");
-                    current = current.next; 
-                }
-            }
-        }
-
         public void Sort()
-        {   
+        {
             if (head == null)
             {
                 Console.WriteLine("No data stored in linkedlist");
@@ -63,7 +16,7 @@ namespace CS_Practise.Question.Search_Sort
             else
             {
                 int temp;
-                for(Node? i = head; i !=null; i=i.next)
+                for (Node? i = head; i != null; i = i.next)
                 {
                     for (Node? j = i.next; j != null; j = j.next)
                     {
@@ -78,19 +31,18 @@ namespace CS_Practise.Question.Search_Sort
             }
 
         }
-
     }
 
     internal class question28
     {
         public void SortLinkedList()
         {
-            Linkedlist linkedlist = new Linkedlist();
-            linkedlist.AddToBack(3);
-            linkedlist.AddToBack(1);
-            linkedlist.AddToBack(5);
-            linkedlist.AddToBack(6);
-            linkedlist.AddToBack(2);
+            LinkedlistWithSort linkedlist = new LinkedlistWithSort();
+            linkedlist.InsertBack(3);
+            linkedlist.InsertBack(1);
+            linkedlist.InsertBack(5);
+            linkedlist.InsertBack(6);
+            linkedlist.InsertBack(2);
 
             linkedlist.Display();
             Console.WriteLine();
