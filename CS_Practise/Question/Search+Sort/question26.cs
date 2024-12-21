@@ -25,13 +25,12 @@ namespace CS_Practise.Question.Search_Sort
 
             Console.Write(String.Join(", ", arr));
         }
-
+//----------------------------------------------------------------------------------------//
         public void QuickSort()
         {
-            int[] arr = [23, 44, 12, 9, 3, 24, 58, 134, 96, 91];
+            int[] arr = { 23, 44, 12, 9, 3, 24, 58, 134, 96, 91 }; // Use curly braces for array initialization
             QuickSortHelper(arr, 0, arr.Length - 1);
             Console.Write(String.Join(",", arr));
-
         }
         public void QuickSortHelper(int[] arr, int left, int right)
         {
@@ -40,18 +39,17 @@ namespace CS_Practise.Question.Search_Sort
                 int pivotindex = Partition(arr, left, right);
                 QuickSortHelper(arr, left, pivotindex - 1);
                 QuickSortHelper(arr, pivotindex + 1, right);
-
             }
         }
 
         public int Partition(int[] arr, int left, int right)
         {
-            int pivot = right;
+            int pivot = arr[right]; // Use the value at the right index as the pivot
             int i = left - 1;
 
             for (int j = left; j < right; j++)
             {
-                if ( arr[j] < arr[i])
+                if (arr[j] <= pivot) //if descending ((arr[j] >= pivot)
                 {
                     i++;
                     (arr[i], arr[j]) = (arr[j], arr[i]);
@@ -59,9 +57,9 @@ namespace CS_Practise.Question.Search_Sort
             }
             (arr[i + 1], arr[right]) = (arr[right], arr[i + 1]);
 
-            return i + 1 ;
+            return i + 1;
         }
-
+//----------------------------------------------------------------------------------------//
         public void NormalSort()
         {
             int[] arr = [23, 44, 12, 9, 3, 24, 58, 134, 96, 91];
