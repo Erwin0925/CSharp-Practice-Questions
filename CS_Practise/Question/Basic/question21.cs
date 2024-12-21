@@ -2,11 +2,11 @@
 namespace CS_Practise.Question.Basic
 {
     using CS_Practise.Question.LinkedList;
-    public class question21 : LinkedList
+    public class question21
     {
         public void ManualLinkedList()
         {
-            var list = new question21(); // Use the correct type from the namespace
+            var list = new LinkedList(); // Use the correct type from the namespace
             list.InsertBack(2);
             list.InsertBack(3);
             list.InsertBack(4);
