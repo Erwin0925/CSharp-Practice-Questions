@@ -10,13 +10,11 @@ namespace CS_Practise
     {
         static void Main(string[] args)
         {
-            Singleton singleton1 = Singleton.Instance;
+            question49 obj1 = question49.Instance;
 
-            Singleton singleton2 = Singleton.Instance;
-
-            Console.WriteLine($"Are both instances the same? {ReferenceEquals(singleton1, singleton2)}");
-
-            singleton1.DisplayMessage("Go Home ");
+            obj1.AddData(12);
+            obj1.AddData(14);
+            obj1.DisplayData();
         }
     }
 }
